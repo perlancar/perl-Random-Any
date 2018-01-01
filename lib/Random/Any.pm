@@ -41,7 +41,7 @@ falls back on the builtin rand().
 
 =head1 FUNCTIONS
 
-=head2 rand($str) => str
+=head2 rand
 
 
 =head1 SEE ALSO
