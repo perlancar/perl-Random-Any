@@ -30,17 +30,17 @@ sub import {
     }
 
     unless ($sub) {
-        if (eval { require Math::Random::Secure; 1 }) {
-            $sub = \&Math::Random::Secure::rand;
+        if (eval { require Data::Entropy::Algorithms; 1 }) {
+            $sub = \&Data::Entropy::Algorithms::rand;
         } else {
-            warn __PACKAGE__ . ": Math::Random::Secure is not available: $@, falling back on builtin rand()" if $warn;
+            warn __PACKAGE__ . ": Data::Entropy::Algorithms is not available: $@, falling back on builtin rand()" if $warn;
             $sub = \&CORE::rand;
         }
     }
 }
 
 1;
-# ABSTRACT: Try to use Math::Random::Secure::rand(), fallback on builtin rand()
+# ABSTRACT: Try to use Data::Entropy::Algorithms::rand(), fallback on builtin rand()
 
 =head1 SYNOPSIS
 
@@ -52,15 +52,16 @@ sub import {
 =head1 DESCRIPTION
 
 This module provides a single export C<rand()> that tries to use
-L<Math::Random::Secure>'s C<rand()> first and, if that module is not available,
-falls back on the builtin rand().
+L<Data::Entropy::Algorithms>'s C<rand()> first and, if that module is not
+available, falls back on the builtin rand().
 
 
 =head1 EXPORTS
 
 =head2 -warn => bool
 
-Can be set to true to emit a warning if Math::Random::Secure is not available.
+Can be set to true to emit a warning if Data::Entropy::Algorithms is not
+available.
 
 
 =head1 FUNCTIONS
@@ -70,4 +71,4 @@ Can be set to true to emit a warning if Math::Random::Secure is not available.
 
 =head1 SEE ALSO
 
-L<Math::Random::Secure>
+L<Data::Entropy::Algorithms>
