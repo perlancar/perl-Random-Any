@@ -29,6 +29,8 @@ sub import {
         }
     }
 
+    $warn = $ENV{PERL_RANDOM_ANY_WARN} unless defined $warn;
+
     unless ($sub) {
         if (eval { require Data::Entropy::Algorithms; 1 }) {
             $sub = \&Data::Entropy::Algorithms::rand;
@@ -67,6 +69,13 @@ available.
 =head1 FUNCTIONS
 
 =head2 rand
+
+
+=head1 ENVIRONMENT
+
+=head2 PERL_RANDOM_ANY_WARN
+
+Bool. Can be set to provide default value for C<-warn>.
 
 
 =head1 SEE ALSO
