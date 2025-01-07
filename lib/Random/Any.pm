@@ -11,7 +11,7 @@ use strict 'subs', 'vars';
 my $warn;
 my $sub;
 
-sub rand(;$) {
+sub rand(;$) { ## no critic: Subroutines::ProhibitSubroutinePrototypes
     $sub->(@_);
 }
 
