@@ -1,10 +1,12 @@
 package Random::Any;
 
-# DATE
-# VERSION
-
 use strict 'subs', 'vars';
 #use warnings;
+
+# AUTHORITY
+# DATE
+# DIST
+# VERSION
 
 my $warn;
 my $sub;
@@ -30,6 +32,7 @@ sub import {
     }
 
     $warn = $ENV{PERL_RANDOM_ANY_WARN} unless defined $warn;
+    $warn = 1 unless defined $warn;
 
     unless ($sub) {
         if (eval { require Data::Entropy::Algorithms; 1 }) {
@@ -62,8 +65,8 @@ available, falls back on the builtin rand().
 
 =head2 -warn => bool
 
-Can be set to true to emit a warning if Data::Entropy::Algorithms is not
-available.
+If true (the default) then emit a warning if Data::Entropy::Algorithms is not
+available. To disable this warning, set to false.
 
 
 =head1 FUNCTIONS
