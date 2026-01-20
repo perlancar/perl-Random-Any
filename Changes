@@ -1,3 +1,10 @@
+0.006   2026-01-20  Released-By: PERLANCAR; Urgency: low
+
+        - No functional changes.
+
+        - Fix typo in documentation.
+
+
 0.005   2025-01-07  Released-By: PERLANCAR; Urgency: medium; Backward-Incompatible: yes
 
         - [doc] Discourage the use of rand() and this module, mention
