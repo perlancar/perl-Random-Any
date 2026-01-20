@@ -62,7 +62,7 @@ available, warns to STDERR and falls back on the builtin C<rand()>.
 
 Note that whenever you can you are encouraged to use C<rand_int()> or
 C<random_int()>, or C<rand_flt()> or C<random_float()> function instead. From
-C<Data::Entropy::Algorithm>'s documentation:
+C<Data::Entropy::Algorithms>' documentation:
 
 "This function should not be used in any new code, because the kind of output
 supplied by C<rand> is hardly ever the right thing to use. The C<int(rand($n))>
